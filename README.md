@@ -1,1 +1,1 @@
-# distributed-NLP-on-supercomputer-with-pytorch-lightning
+# distributed-NLP-practice-on-supercomputer-with-pytorch-lightning
