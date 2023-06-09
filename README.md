@@ -4,8 +4,10 @@ Natural Language Processing (NLP) is a subfield of artificial intelligence (AI) 
 This repo is intended to share best practices for fine-tuning pretrained models (e.g., BERT and GPT-2) using multiple GPU nodes on a supercomputer managed by SLURM. It encompasses five examples of fine tuning : (1) Document Classification (Sentiment Analysis), (2) Sentense Pair Classification (Natural Language Inference; NLI), (3) Sequence Labeling (Named Entity Recognition), (4) Question Answering, and (5) Sentence Generation. The initial four fine tunnings rely on a BERT pretrainded model, while the Sentence Generation example uses a GPT-2 pretrained model for its fine-tunning. 
 
 Please note that all the code in this repository is sourced from the *Ratsgo's NLPBOOK*.
-* You can access the original code on Google Colab through [Ratsgo's Tutorial Link](https://ratsgo.github.io/nlpbook/docs/tutorial_links) 
+* You can access and run the original code on Google Colab through [Ratsgo's Tutorial Link](https://ratsgo.github.io/nlpbook/docs/tutorial_links) 
 * Detailed explanations of how the fine-tunnings work can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
+
+I had to modify the original Google Colab code a bit to be able to run it on multiple GPU nodes on a supercomputer. 
 
 **Contents**
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
