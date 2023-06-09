@@ -7,7 +7,7 @@ Please note that all the code in this repository is sourced from the *Ratsgo's N
 * You can access and run the original code on Google Colab through [Ratsgo's Tutorial Link](https://ratsgo.github.io/nlpbook/docs/tutorial_links) 
 * Detailed explanations of how the fine-tunnings work can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
 
-I had to modify the original Google Colab code a bit to be able to run it on multiple GPU nodes on a supercomputer. 
+I had to make slight modifications to the original Google Colab code to enable distributed deep learning training across multiple GPU nodes on a supercomputer.  
 
 **Contents**
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
