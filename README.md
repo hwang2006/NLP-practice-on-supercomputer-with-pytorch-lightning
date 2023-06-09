@@ -128,7 +128,7 @@ Thank you for installing Miniconda3!
 conda 4.12.0
 ```
 
-## Installing Pytorch Lightning
+## Installing Ratsnlp  
 Now you are ready to build Horovod as a conda virtual environment: 
 1. load modules: 
 ```
