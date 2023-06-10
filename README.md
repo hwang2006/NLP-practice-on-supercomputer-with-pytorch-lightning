@@ -331,10 +331,10 @@ def get_trainer(args, cliargs, return_trainer_only=True):
         return checkpoint_callback, trainer
 ```
 
-Here's the orginal get_trainer method before modification:
+Here's the orginal get_trainer method before modification, where you may notice that the get_trainer method has been modified to accept command line arguments that has to do with distributed training including "strategy" and "num_nodes" as for the Trainer parameters of the underlying Pytorch Lightning Framework. 
 ```
 [glogin01]$ cat ./ratsnlp/ratsnlp/nlpbook/trainer.org.py
-import os
+import os 
 import torch
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import ModelCheckpoint
