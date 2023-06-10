@@ -14,7 +14,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Installing Conda](#installing-conda)
 * [Installing Ratsnlp](#installing-ratsnlp)
 * [Running Jupyter](#running-jupyter)
-* [NLP fine-tunings on Jupyter](#nlp-fine-tunings-on-jupyter) 
+* [NLP fine-tuning code examples on Jupyter](#nlp-fine-tunings-on-jupyter) 
 * [Running Pytorch Lightning on SLURM](#running-pytorch-lightning-on-slurm)
 * [Reference](#reference)
 
