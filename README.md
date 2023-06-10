@@ -419,7 +419,7 @@ salloc: Nodes gpu[32-33] are ready for job
 (nlp) [gpu32]$ srun -N 1 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py
 (nlp) [gpu32]$ srun -N 1 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py
 ```
-Now, you are ready to run a fine-tuning batch job.
+Now, you are ready to submit and run a fine-tuning batch job.
 1. edit a batch job script running on 2 nodes with 8 GPUs each:
 ```
 [glogin01]$ cat pl_finetunnig_batch.sh
