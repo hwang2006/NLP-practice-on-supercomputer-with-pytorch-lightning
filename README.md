@@ -5,7 +5,7 @@ This repo is intended to share best practices for fine-tuning pretrained models 
 
 Please note that all the code in this repository is sourced from the *Ratsgo's NLPBOOK*.
 * You can access and run the original code on Google Colab through [Ratsgo's Tutorial Link](https://ratsgo.github.io/nlpbook/docs/tutorial_links) 
-* Detailed explanations of how the fine-tunnings work can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
+* Detailed explanations of how the five fine-tunnings work can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
 
 I had to make slight modifications to the original Google Colab code to enable distributed deep learning training across multiple GPU nodes on a supercomputer.  
 
@@ -129,20 +129,29 @@ conda 4.12.0
 ```
 
 ## Installing Ratsnlp  
-Now you are ready to build Horovod as a conda virtual environment: 
+Now you are ready to build a conda "nlp" virtual environment with the Ratsnlp package to be installed: 
 1. load modules: 
 ```
-module load gcc/10.2.0 cuda/11.7
+module load cuda/11.7
 ```
 2. create a new conda virtual environment and activate the environment:
 ```
-[glogin01]$ conda create -n lightning python=3.10
-[glogin01]$ conda activate lightning
+[glogin01]$ conda create -n nlp python=3.10
+[glogin01]$ conda activate nlp
 ```
-3. install the pytorch and lightning package:
+3. install the Ratsnlp package:
 ```
-(lightning) [glogin01]$ conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
-(lightning) [glogin01]$ pip install lightning
+(nlp) [glogin01]$ makdir nlp # create a new directory
+(nlp) [glogin01]$ git clone https://github.com/ratsgo/ratsnlp.git # donwload ratsnlp package
+Cloning into 'ratsnlp'...
+remote: Enumerating objects: 928, done.
+remote: Counting objects: 100% (120/120), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 928 (delta 112), reused 110 (delta 109), pack-reused 808
+Receiving objects: 100% (928/928), 146.95 KiB | 0 bytes/s, done.
+(nlp) [glogin01]$ ls -al
+./  ../  ratsnlp/
+(nlp) [glogin01]$ pip install --editable ratsnlp
 ```
 4. check if the pytorch lightning packages were installed:
 ```
