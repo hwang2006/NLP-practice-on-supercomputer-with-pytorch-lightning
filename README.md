@@ -14,7 +14,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Installing Conda](#installing-conda)
 * [Installing Ratsnlp](#installing-ratsnlp)
 * [Running Jupyter](#running-jupyter)
-* [Pytorch Lightning Examples on Jupyter](#pytorch-lightning-examples-on-jupyter) 
+* [NLP fine-tunings on Jupyter](#nlp-fine-tunings-on-jupyter) 
 * [Running Pytorch Lightning on SLURM](#running-pytorch-lightning-on-slurm)
 * [Reference](#reference)
 
@@ -276,7 +276,7 @@ Password or token: $USER    # your account ID on Neuron
 ```
 <p align="center"><img src="https://user-images.githubusercontent.com/84169368/218938419-f38c356b-e682-4b1c-9add-6cfc29d53425.png"/></p> 
 
-## Pytorch Lightning Examples on Jupyter
+## Running NLP fine-tunings on Jupyter
 Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, the jupyter notebook examples would lead to getting familiarized yourself to the basics of pytorch lightning coding practices step-by-step. Please refer to the [notebooks](https://github.com/hwang2006/distributed-training-with-pytorch-lightning/tree/main/notebooks) directory for example codes.
 * [Writing a Pytorch Lightning Simple Example Step-by-Step](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
 * [Fine-tunning a Pretrained BERT Model for Sentiment Classification](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pt_bert_nsmc_lightning.ipynb)
