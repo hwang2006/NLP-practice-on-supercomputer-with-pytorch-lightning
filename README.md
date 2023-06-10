@@ -12,7 +12,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 **Contents**
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
 * [Installing Conda](#installing-conda)
-* [Installing Pytorch Lightning](#installing-pytorch-lightning)
+* [Installing Ratsnlp](#installing-ratsnlp)
 * [Running Jupyter](#running-jupyter)
 * [Pytorch Lightning Examples on Jupyter](#pytorch-lightning-examples-on-jupyter) 
 * [Running Pytorch Lightning on SLURM](#running-pytorch-lightning-on-slurm)
