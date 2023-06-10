@@ -149,7 +149,7 @@ remote: Counting objects: 100% (120/120), done.
 remote: Compressing objects: 100% (11/11), done.
 remote: Total 928 (delta 112), reused 110 (delta 109), pack-reused 808
 Receiving objects: 100% (928/928), 146.95 KiB | 0 bytes/s, done.
-(nlp) [glogin01]$ ls -al
+(nlp) [glogin01]$ ls
 ./  ../  ratsnlp/
 (nlp) [glogin01]$ pip install --editable ratsnlp # install the ratsnlp package locally to be able to make changes to 
 (nlp) [glogin01]$ python -c "import torch; print(torch.__version__)"
@@ -285,4 +285,52 @@ Now, you are ready to run fine-tuning code examples on a jupyter notebook. Pleas
 * [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb)
 
 ## Running NLP fine-tunings on SLURM
+Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order for the fine-tuning code to be able to run on a SLURM cluster.  
+```
+[glogin01]$ ls
+./  ../  ratsnlp/
+[glogin01]$ cat ./ratsnlp/ratsnlp/nlpbook/trainer.py
+import os
+import torch
+from pytorch_lightning import Trainer
+#from lightning import Trainer
+from pytorch_lightning.callbacks import ModelCheckpoint
+
+
+def get_trainer(args, cliargs, return_trainer_only=True):
+    ckpt_path = os.path.abspath(args.downstream_model_dir)
+    os.makedirs(ckpt_path, exist_ok=True)
+    checkpoint_callback = ModelCheckpoint(
+        dirpath=ckpt_path,
+        save_top_k=args.save_top_k,
+        monitor=args.monitor.split()[1],
+        mode=args.monitor.split()[0],
+        #filename='{epoch}-{val_loss:.2f}',
+        filename='{epoch}-{val_loss:.3f}',
+    )
+    trainer = Trainer(
+        max_epochs=args.epochs,
+        fast_dev_run=args.test_mode,
+        num_sanity_val_steps=None if args.test_mode else 0,
+        callbacks=[checkpoint_callback],
+        default_root_dir=ckpt_path,
+        # For GPU Setup
+        #deterministic=torch.cuda.is_available() and args.seed is not None,
+        #gpus=torch.cuda.device_count() if torch.cuda.is_available() else None,
+        accelerator=cliargs.accelerator,
+        devices=cliargs.devices,
+                #strategy="ddp" if torch.cuda.is_available() else "auto",
+                strategy=cliargs.strategy,
+                num_nodes = cliargs.num_nodes,
+        precision=16 if args.fp16 else 32,
+        # For TPU Setup
+        tpu_cores=args.tpu_cores if args.tpu_cores else None,
+    )
+    if return_trainer_only:
+        return trainer
+    else:
+        return checkpoint_callback, trainer
+
+
+```
 
