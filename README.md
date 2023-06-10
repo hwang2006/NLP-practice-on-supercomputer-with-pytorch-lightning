@@ -151,10 +151,14 @@ remote: Total 928 (delta 112), reused 110 (delta 109), pack-reused 808
 Receiving objects: 100% (928/928), 146.95 KiB | 0 bytes/s, done.
 (nlp) [glogin01]$ ls -al
 ./  ../  ratsnlp/
-(nlp) [glogin01]$ pip install --editable ratsnlp
+(nlp) [glogin01]$ pip install --editable ratsnlp # install the ratsnlp package locally to be able to make changes to 
+(nlp) [glogin01]$ python -c "import torch; print(torch.__version__)"
+2.0.1+cu117
+(nlp) [glogin01]$ python -c "import pytorch_lightning as pl; print(pl.__version__)" # make sure packages were installed. 
+1.6.1
 ```
 4. check if the pytorch lightning packages were installed:
-```
+``` 
 (lightning) [glogin01]$ conda list | grep lightning
 # packages in environment at /scratch/$USER/miniconda3/envs/lightning:
 lightning                 2.0.2                    pypi_0    pypi
