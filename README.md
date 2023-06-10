@@ -279,4 +279,7 @@ Password or token: $USER    # your account ID on Neuron
 ## NLP fine-tunings on Jupyter
 Now, you are ready to run fine-tuning code examples on a jupyter notebook. Please refer to the [notebooks](https://github.com/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/tree/main/notebooks) directory.
 * [Sentiment Analysis](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/doc-cls-train.ipynb)
-* 
+* [Natual Language Inference](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/pair-cls-train.ipynb)
+* [Named Entiry Recognition](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/ner_train.ipynb)
+* [Question Answering](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/QA_train.ipynb)
+* [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen_train.ipynb)
