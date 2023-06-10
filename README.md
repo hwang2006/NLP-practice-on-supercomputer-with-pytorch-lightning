@@ -151,7 +151,7 @@ remote: Total 928 (delta 112), reused 110 (delta 109), pack-reused 808
 Receiving objects: 100% (928/928), 146.95 KiB | 0 bytes/s, done.
 (nlp) [glogin01]$ ls
 ./  ../  ratsnlp/
-(nlp) [glogin01]$ pip install --editable ratsnlp # install the ratsnlp package locally to be able to make changes to 
+(nlp) [glogin01]$ pip install --editable ratsnlp # install the ratsnlp package locally to be made modified for enabling distributed training.    
 (nlp) [glogin01]$ python -c "import torch; print(torch.__version__)"
 2.0.1+cu117
 (nlp) [glogin01]$ python -c "import pytorch_lightning as pl; print(pl.__version__)" # make sure packages were installed. 
@@ -285,7 +285,7 @@ Now, you are ready to run fine-tuning code examples on a jupyter notebook. Pleas
 * [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb)
 
 ## Running NLP fine-tunings on SLURM
-Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the "get_trainer" method in the trainer.py to enable the execution of distributed training across multiple GPU nodes. That's it!!
+Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the "get_trainer()" method in the trainer.py to enable the execution of distributed training across multiple GPU nodes. That's it!!
 ```
 [glogin01]$ ls
 ./  ../  ratsnlp/
