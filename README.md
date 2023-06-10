@@ -367,4 +367,101 @@ def get_trainer(args, return_trainer_only=True):
     else:
         return checkpoint_callback, trainer
 ```
+Now, you will be able to do distributed fine-tunning practices on a supercomputer. 
+1. request allocation of available GPU-nodes:
+```
+[glogin01]$ salloc --partition=amd_a100nv_8 -J debug --nodes=2 --time=8:00:00 --gres=gpu:4 --comment=python
+salloc: Granted job allocation 154173
+salloc: Waiting for resource configuration
+salloc: Nodes gpu[32-33] are ready for job
+```
+2. load modules and activate the nlp conda environment:
+```
+[gpu32]$ module load cuda/11.7
+[gpu32]$ $ conda activate nlp 
+(nlp) [gpu32]$
+```
+3. run a fine-tunning code:
+- to run on the two nodes with 4 GPUs each. Pytorch Lightning complains and exits with some runtime error messages when using "srun" with the -n or --ntasks options, so you need to use --ntasks-per-node instead.
+```
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --num-nodes 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --num-nodes 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/ner_train.py --num-nodes 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/QA_train.py --num-nodes 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/snt-gen-train.py --num-nodes 2
+```
+- to run on the two nodes with 2 GPUs each
+```
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --num_nodes 2 --devices 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --num_nodes 2 --devices 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/ner_train.py --num-nodes 2 --devices 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 NLP-practice-on-supercomputer-with-pytorch-lightning/src/QA_train.py --num-nodes 2 --devices 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/snt-gen-train.py --devices 2
+```
+- to run on the two nodes with 1 GPU each
+```
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=1 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --num_nodes 2 --devices 1
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=1 NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --num_nodes 2 --devices 1
+```
+- to run one node with 4 GPUs
+```
+(nlp) [gpu32]$ python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py
+(nlp) [gpu32]$ python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py
+(nlp) [gpu32]$ srun -N 1 --ntasks-per-node=4 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py
+(nlp) [gpu32]$ srun -N 1 --ntasks-per-node=4 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py
+```
+- to run one node with 2 GPUs
+```
+(nlp) [gpu32]$ python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --devices 2
+(nlp) [gpu32]$ python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --devices 2
+(nlp) [gpu32]$ srun -N 1 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py
+(nlp) [gpu32]$ srun -N 1 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py
+```
+Now, you are ready to run a fine-tuning batch job.
+1. edit a batch job script running on 2 nodes with 8 GPUs each:
+```
+[glogin01]$ cat pl_finetunnig_batch.sh
+#!/bin/sh
+#SBATCH -J pytorch_lightning # job name
+#SBATCH --time=24:00:00 # walltime
+#SBATCH --comment=pytorch # application name
+#SBATCH -p amd_a100nv_8 # partition name (queue or class)
+#SBATCH --nodes=2 # the number of nodes
+#SBATCH --ntasks-per-node=8 # number of tasks per node
+#SBATCH --gres=gpu:8 # number of GPUs per node
+#SBATCH --cpus-per-task=4 # number of cpus per task
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+module load cuda/11.7
+source ~/.bashrc
+conda activate nlp
+
+# The num_nodes argument should be specified to be the same number as in the #SBATCH --nodes=xxx
+srun python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --num_nodes 2
+```
+2. submit and execute the batch job:
+```
+[glogin01]$ sbatch pl_finetuning_batch.sh
+Submitted batch job 169608
+```
+3. check & monitor the batch job status:
+```
+[glogin01]$ squeue -u $USER
+             JOBID       PARTITION     NAME     USER    STATE       TIME TIME_LIMI  NODES NODELIST(REASON)
+            169608    amd_a100nv_8   python   qualis  PENDING       0:00 1-00:00:00      2 (Resources)
+[glogin01]$ squeue -u $USER
+             JOBID       PARTITION     NAME     USER    STATE       TIME TIME_LIMI  NODES NODELIST(REASON)
+            169616    amd_a100nv_8   python   qualis  RUNNING       1:01 1-00:00:00      2 gpu[32,34]
+```
+4. check the standard output & error files of the batch job:
+```
+[glogin01]$ cat pytorch_lightning_169608.out
+[glogin01]$ cat pytorch_lightning_169608.err
+```
+5. For some reason, you may want to stop or kill the batch job.
+```
+[glogin01]$ scancel 169608
+```
+
 
