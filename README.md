@@ -15,7 +15,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Installing Ratsnlp](#installing-ratsnlp)
 * [Running Jupyter](#running-jupyter)
 * [NLP fine-tuning code examples on Jupyter](#nlp-fine-tunings-on-jupyter) 
-* [Running Pytorch Lightning on SLURM](#running-pytorch-lightning-on-slurm)
+* [Running NLP fine-tunings on SLURM](#running-nlp-fine-tunings-on-slurm)
 * [Reference](#reference)
 
 ## KISTI Neuron GPU Cluster
@@ -283,3 +283,6 @@ Now, you are ready to run fine-tuning code examples on a jupyter notebook. Pleas
 * [Named Entiry Recognition](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/ner-train.ipynb)
 * [Question Answering](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/QA-train.ipynb)
 * [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb)
+
+## Running NLP fine-tunings on SLURM
+
