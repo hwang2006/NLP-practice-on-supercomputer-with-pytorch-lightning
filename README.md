@@ -285,7 +285,7 @@ Now, you are ready to run fine-tuning code examples on a jupyter notebook. Pleas
 * [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb)
 
 ## Running NLP fine-tunings on SLURM
-Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order for the fine-tuning code to be able to run on a SLURM cluster.  
+Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the get_trainer method in trainer.py as follows:  
 ```
 [glogin01]$ ls
 ./  ../  ratsnlp/
