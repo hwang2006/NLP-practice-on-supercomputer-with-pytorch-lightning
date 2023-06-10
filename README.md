@@ -285,7 +285,7 @@ Now, you are ready to run fine-tuning code examples on a jupyter notebook. Pleas
 * [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb)
 
 ## Running NLP fine-tunings on SLURM
-Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the get_trainer method in trainer.py as follows:  
+Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the "get_trainer" method in the trainer.py to support distributed training on multiple nodes. That's it!
 ```
 [glogin01]$ ls
 ./  ../  ratsnlp/
@@ -319,9 +319,9 @@ def get_trainer(args, cliargs, return_trainer_only=True):
         #gpus=torch.cuda.device_count() if torch.cuda.is_available() else None,
         accelerator=cliargs.accelerator,
         devices=cliargs.devices,
-                #strategy="ddp" if torch.cuda.is_available() else "auto",
-                strategy=cliargs.strategy,
-                num_nodes = cliargs.num_nodes,
+        #strategy="ddp" if torch.cuda.is_available() else "auto",
+        strategy=cliargs.strategy,
+        num_nodes = cliargs.num_nodes,
         precision=16 if args.fp16 else 32,
         # For TPU Setup
         tpu_cores=args.tpu_cores if args.tpu_cores else None,
