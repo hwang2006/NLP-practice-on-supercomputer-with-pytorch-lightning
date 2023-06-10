@@ -367,7 +367,9 @@ def get_trainer(args, return_trainer_only=True):
     else:
         return checkpoint_callback, trainer
 ```
-Now, you will be able to do distributed fine-tunning practices on a supercomputer. 
+Now, you will be able to carry out distributed fine-tunning practices on a supercomputer. All the fine-tunning code is writted based on the one
+that ran successfully on Jupyter. All the source code is avaiable at the [src](#https://github.com/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/tree/main/src) directory.  
+
 1. request allocation of available GPU-nodes:
 ```
 [glogin01]$ salloc --partition=amd_a100nv_8 -J debug --nodes=2 --time=8:00:00 --gres=gpu:4 --comment=python
