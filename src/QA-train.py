@@ -1,11 +1,11 @@
 import torch
 from ratsnlp.nlpbook.qa import QATrainArguments
 args = QATrainArguments(
-    pretrained_model_name="beomi/kcbert-base",
-    #pretrained_model_name="beomi/kcbert-large",
+    #pretrained_model_name="beomi/kcbert-base",
+    pretrained_model_name="beomi/kcbert-large",
     downstream_corpus_name="korquad-v1",
-    downstream_model_dir="/scratch/qualis/nlpbook/checkpoint-qa",
-    downstream_corpus_root_dir="/scratch/qualis/nlpbook",
+    downstream_model_dir="/scratch/qualis/nlp/checkpoint-qa",
+    downstream_corpus_root_dir="/scratch/qualis/nlp",
     max_seq_length=128,
     max_query_length=32,
     doc_stride=64,
@@ -79,7 +79,7 @@ from argparse import ArgumentParser
 import os
 
 args.batch_size = 128
-args.epochs = 5
+args.epochs = 10
 args.cpu_workers = 8
 args.fp16 = True
 

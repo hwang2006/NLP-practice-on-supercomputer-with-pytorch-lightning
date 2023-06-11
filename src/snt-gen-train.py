@@ -4,8 +4,8 @@ args = GenerationTrainArguments(
     #pretrained_model_name="skt/kogpt2-base-v2", #125M of parameters
     pretrained_model_name="skt/ko-gpt-trinity-1.2B-v0.5", #1.2B of parameters 
     downstream_corpus_name="nsmc",
-    downstream_model_dir="/scratch/qualis/nlpbook/checkpoint-generation",
-    downstream_corpus_root_dir="/scratch/qualis/nlpbook",
+    downstream_model_dir="/scratch/qualis/nlp/checkpoint-generation",
+    downstream_corpus_root_dir="/scratch/qualis/nlp",
     max_seq_length=32,
     batch_size=32 if torch.cuda.is_available() else 4,
     learning_rate=5e-5,
@@ -107,12 +107,3 @@ if __name__ ==  '__main__':
        cliargs.devices = os.getenv('SLURM_NTASKS_PER_NODE') # devices to be set to the slurm argument
 
     main(cliargs)
-
-"""
-if __name__ ==  '__main__':
-    parser = ArgumentParser()
-    parser.add_argument("--num_nodes", default=1)
-    cliargs = parser.parse_args()
-
-    main(cliargs)
-"""

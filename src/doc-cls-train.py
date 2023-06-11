@@ -2,9 +2,10 @@ import torch
 from ratsnlp.nlpbook.classification import ClassificationTrainArguments
 args = ClassificationTrainArguments(
     pretrained_model_name="beomi/kcbert-base",
+    #pretrained_model_name="beomi/kcbert-large",
     downstream_corpus_name="nsmc",
-    downstream_model_dir="/scratch/qualis/nlpbook/checkpoint-doccls",
-    downstream_corpus_root_dir="/scratch/qualis/nlpbook",
+    downstream_model_dir="/scratch/qualis/nlp/checkpoint-doccls",
+    downstream_corpus_root_dir="/scratch/qualis/nlp",
     #batch_size=32 if torch.cuda.is_available() else 4,
     batch_size=128 if torch.cuda.is_available() else 4,
     learning_rate=5e-5,
