@@ -385,7 +385,7 @@ salloc: Nodes gpu[32-33] are ready for job
 ```
 3. run a fine-tunning code:
 
-Here is one of the fine-tuning examples in the [src](https://github.com/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/tree/main/src) directory, where you might notice that you may want to switch its pretrained model with an appropriate pretrained model for your purpose. Please refer to the [customization section](https://ratsgo.github.io/nlpbook/docs/doc_cls/detail/) of Ratsgo's NLPBOOK for getting an idea of how to customize the fine-tuning code examples for your own specific task. 
+Here is one of the fine-tuning examples in the [src](https://github.com/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/tree/main/src) directory, where you might notice that you may want to switch its pretrained model with an appropriate pretrained model for your purpose. Please refer to the [customization section](https://ratsgo.github.io/nlpbook/docs/doc_cls/detail/) of Ratsgo's NLPBOOK for getting an idea of how to customize the fine-tuning code examples for your own task. 
 ```
 [glogin01]$ cat NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py
 import torch
