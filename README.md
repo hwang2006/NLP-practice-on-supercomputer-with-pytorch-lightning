@@ -523,7 +523,7 @@ if __name__ ==  '__main__':
 - to run on the two nodes with 1 GPU each
 ```
 (nlp) [gpu32]$ srun -N 2 --ntasks-per-node=1 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --num_nodes 2 --devices 1
-(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=1 NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --num_nodes 2 --devices 1
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=1 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --num_nodes 2 --devices 1
 ```
 - to run one node with 4 GPUs
 ```
