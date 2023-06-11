@@ -517,7 +517,7 @@ if __name__ ==  '__main__':
 (nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/doc-cls-train.py --num_nodes 2 --devices 2
 (nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/pair-cls-train.py --num_nodes 2 --devices 2
 (nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/ner_train.py --num-nodes 2 --devices 2
-(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 NLP-practice-on-supercomputer-with-pytorch-lightning/src/QA_train.py --num-nodes 2 --devices 2
+(nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/QA_train.py --num-nodes 2 --devices 2
 (nlp) [gpu32]$ srun -N 2 --ntasks-per-node=2 python NLP-practice-on-supercomputer-with-pytorch-lightning/src/snt-gen-train.py --devices 2
 ```
 - to run on the two nodes with 1 GPU each
