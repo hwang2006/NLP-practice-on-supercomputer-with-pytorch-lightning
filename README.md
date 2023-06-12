@@ -681,7 +681,7 @@ Password:
 ```
 URL Address: localhost:5000
 ```
-<p align="center"><img src="https://github.com/hwang2006/KISTI-DL-tutorial-using-horovod/assets/84169368/01fae688-e2c0-4dcc-9c4c-094d06654849" width="70%" height="70%"/></p> 
+<p align="center"><img src="https://github.com/hwang2006/KISTI-DL-tutorial-using-horovod/assets/84169368/01fae688-e2c0-4dcc-9c4c-094d06654849" width="60%" height="60%"/></p> 
 
 ## Reference
 * [Ratsnlp GitHub](https://github.com/ratsgo/ratsnlp)
