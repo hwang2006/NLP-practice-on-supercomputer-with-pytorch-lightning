@@ -590,7 +590,7 @@ Submitted batch job 169608
 ## Running Flask for exercising inference
 Inference in ML/DL refers to the process of making predictions based on a trained model. It is a crucial step in the ML/DL pipeline, as it allows models to be deployed and used in real-world applications. [Flask](http://flask.pocoo.org/) is a lightweight web framework written in Python that is designed to be simple and easy to use, making it a popular choice for building web applications and APIs. Likewise the running of Jupyter notebook, we will run a Flask web server on a compute node and will access it from a web browser on your PC or notebook throught the SSH port forwarding mechanism.  
 
-1. create a batch script for launching a Flask server:
+1. create a batch script for launching a Flask web server
 ```
 [glogin01]$ cat flask_run.sh
 #!/bin/bash
@@ -632,7 +632,7 @@ conda activate nlp
 #conda activate tf-nlp
 #conda activate hvd
 cd /scratch/qualis/nlp   
-flask --app doc-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
+flask --app doc-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug 
 #flask --app pair-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
 #flask --app ner-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
 #flask --app QA-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
