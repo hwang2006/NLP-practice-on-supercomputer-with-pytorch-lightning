@@ -16,6 +16,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Running Jupyter](#running-jupyter)
 * [NLP fine-tuning code examples on Jupyter](#nlp-fine-tunings-on-jupyter) 
 * [Running distributed NLP fine-tunings on SLURM](#running-distributed-nlp-fine-tunings-on-slurm)
+* [Running Flask for inference](#running-flask-for-inference)
 * [Reference](#reference)
 
 ## KISTI Neuron GPU Cluster
@@ -585,5 +586,9 @@ Submitted batch job 169608
 ```
 [glogin01]$ scancel 169608
 ```
+
+## Running Flask for inference
+Inference in ML/DL refers to the process of making predictions based on a trained model. It is a crucial step in the ML/DL pipeline, as it allows models to be deployed and used in real-world applications. [Flask](http://flask.pocoo.org/) is a lightweight web framework written in Python. It is designed to be simple and easy to use, making it a popular choice for building web applications and APIs.  
+
 ## Reference
 * [Ratsnlp GitHub](https://github.com/ratsgo/ratsnlp)
