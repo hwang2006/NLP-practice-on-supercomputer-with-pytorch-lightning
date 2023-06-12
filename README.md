@@ -647,5 +647,25 @@ flask --app doc-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
 
 echo "end of the job"
 ```
+2. launch a Flask server
+```
+[glogin01]$ sbatch flask_run.sh
+Submitted batch job XXXXXX
+```
+3. check if a flask server is running
+```
+[glogin01]$ squeue -u $USER
+             JOBID       PARTITION     NAME     USER    STATE       TIME TIME_LIMI  NODES NODELIST(REASON)
+            XXXXXX    amd_a100nv_8 flask_ru    $USER  RUNNING       0:02   8:00:00      1 gpu30
+[glogin01]$ cat slurm-XXXXXX.out
+.
+.
+ * Running on http://10.151.0.30:27478
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 126-393-858
+```
+
 ## Reference
 * [Ratsnlp GitHub](https://github.com/ratsgo/ratsnlp)
