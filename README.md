@@ -1,13 +1,13 @@
 # NLP-practices-on-supercomputer-with-pytorch-lightning
 Natural Language Processing (NLP) is a subfield of artificial intelligence (AI) focusing on the interaction between computers and human language. It involves the development of algorithms and models that enable computers to understand, interpret, and generate natural language in a way that is similar to how humans do. NLP encompasses a wide range of tasks including sentiment analysis, text classification, machine translation, chatbots and virtual assistants, question answering and name entity recognition. 
 
-This repo is intended to share best practices for fine-tuning pretrained models (e.g., BERT and GPT-2) using multiple GPU nodes on a supercomputer managed by SLURM. It encompasses five examples of fine tuning : (1) Document Classification (Sentiment Analysis), (2) Sentense Pair Classification (Natural Language Inference; NLI), (3) Sequence Labeling (Named Entity Recognition), (4) Question Answering, and (5) Sentence Generation. The initial four fine tunnings rely on a BERT pretrainded model, while the Sentence Generatbyion example uses a GPT-2 pretrained model for its fine-tunning. 
+This repo is intended to share best practices for fine-tuning pretrained models (e.g., BERT and GPT-2) using multiple GPU nodes on a supercomputer managed by SLURM. It encompasses five fine-tuning tasks : (1) Document Classification (Sentiment Analysis), (2) Sentence Pair Classification (Natural Language Inference; NLI), (3) Sequence Labeling (Named Entity Recognition; NER), (4) Question Answering, and (5) Sentence Generation. The initial four fine tunings rely on a BERT pretrainded model, while the Sentence Generation example uses a GPT-2 pretrained model. 
 
 Please note that all the code in this repository is sourced from the *Ratsgo's NLPBOOK* blog created by Gichang Lee.   
 * You can access and run the original code on Google Colab through [Ratsgo's Tutorial Link](https://ratsgo.github.io/nlpbook/docs/tutorial_links) 
-* Detailed explanations of how the five fine-tunnings work can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
+* Detailed explanations of how the five fine-tuning examples work including data preprocessing for each task can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
 
-I had to make slight modifications to the original Google Colab code to enable distributed deep learning training across multiple GPU nodes on a supercomputer.  
+I had to make slight modifications to the original Google Colab code to enable distributed training across multiple GPU nodes on a supercomputer.  
 
 **Contents**
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
