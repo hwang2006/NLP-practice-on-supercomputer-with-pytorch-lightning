@@ -15,7 +15,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Installing Ratsnlp](#installing-ratsnlp)
 * [Running Jupyter](#running-jupyter)
 * [NLP fine-tuning code examples on Jupyter](#nlp-fine-tunings-on-jupyter) 
-* [Running distributed NLP fine-tunings on SLURM](#running-distributed-nlp-fine-tunings-on-slurm)
+* [Running distributed NLP fine-tuning tasks on SLURM](#running-distributed-nlp-fine-tuning-tasks-on-slurm)
 * [Running Flask for exercising inference](#running-flask-for-exercising-inference)
 * [Reference](#reference)
 
@@ -285,7 +285,7 @@ Now, you are ready to run fine-tuning code examples on a jupyter notebook. Pleas
 * [Question Answering](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/QA-train.ipynb)
 * [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb)
 
-## Running distributed NLP fine-tunings on SLURM
+## Running distributed NLP fine-tuning tasks on SLURM
 Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the "get_trainer()" method in the trainer.py to enable the execution of distributed training across multiple GPU nodes. That's it!!
 ```
 [glogin01]$ ls
