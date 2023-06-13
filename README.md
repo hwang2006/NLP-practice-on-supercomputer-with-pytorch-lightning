@@ -16,7 +16,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Running Jupyter](#running-jupyter)
 * [NLP fine-tuning code examples on Jupyter](#nlp-fine-tunings-on-jupyter) 
 * [Running distributed NLP fine-tuning tasks on SLURM](#running-distributed-nlp-fine-tuning-tasks-on-slurm)
-* [Running a Flask web server for exercising inference with the fine-tuned models](#running-a-flask-web-server-for-exercising-inference-with-the-fine-tuned-models)
+* [Running a Flask web server for exercising inference](#running-a-flask-web-server-for-exercising-inference-with-the-fine-tuned-models)
 * [Reference](#reference)
 
 ## KISTI Neuron GPU Cluster
