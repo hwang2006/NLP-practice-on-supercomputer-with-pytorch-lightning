@@ -16,7 +16,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Running Jupyter](#running-jupyter)
 * [NLP fine-tuning code examples on Jupyter](#nlp-fine-tunings-on-jupyter) 
 * [Running distributed NLP fine-tuning tasks on SLURM](#running-distributed-nlp-fine-tuning-tasks-on-slurm)
-* [Running Flask for exercising inference](#running-flask-for-exercising-inference)
+* [Running a Flask web server for exercising inference](#running-a-flask-web-server-for-exercising-inference)
 * [Reference](#reference)
 
 ## KISTI Neuron GPU Cluster
@@ -587,7 +587,7 @@ Submitted batch job 169608
 [glogin01]$ scancel 169608
 ```
 
-## Running Flask for exercising inference
+## Running a Flask web server for exercising inference
 Inference in ML/DL refers to the process of making predictions based on a trained model. It is a crucial step in the ML/DL pipeline, as it allows models to be deployed and used in real-world applications. [Flask](http://flask.pocoo.org/) is a lightweight web framework written in Python that is designed to be simple and easy to use, making it a popular choice for building web applications and APIs. Likewise the running of Jupyter notebook, we will run a Flask web server on a compute node and will access it from a web browser on your PC or notebook throught the SSH port forwarding mechanism.  
 
 1. create a batch script for launching a Flask web server
