@@ -14,7 +14,7 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Installing Conda](#installing-conda)
 * [Installing Ratsnlp](#installing-ratsnlp)
 * [Running Jupyter](#running-jupyter)
-* [NLP fine-tuning examples on Jupyter](#nlp-fine-tuning-code-examples-on-jupyter) 
+* [NLP fine-tuning tasks on Jupyter](#nlp-fine-tuning-tasks-on-jupyter) 
 * [Running distributed NLP fine-tuning tasks on SLURM](#running-distributed-nlp-fine-tuning-tasks-on-slurm)
 * [Running a Flask web server for exercising inference](#running-a-flask-web-server-for-exercising-inference-with-the-fine-tuned-models)
 * [Reference](#reference)
@@ -277,7 +277,7 @@ Password or token: $USER    # your account ID on Neuron
 ```
 <p align="center"><img src="https://user-images.githubusercontent.com/84169368/218938419-f38c356b-e682-4b1c-9add-6cfc29d53425.png"/></p> 
 
-## NLP fine-tuning code examples on Jupyter
+## NLP fine-tuning tasks on Jupyter
 Now, you are ready to run fine-tuning code examples on a jupyter notebook. Please refer to the [notebooks](https://github.com/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/tree/main/notebooks) directory for jupyter notebook source code. 
 * [Sentiment Analysis](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/doc-cls-train.ipynb)`[`[Ratsgo's NLPBOOL Document Classification](https://ratsgo.github.io/nlpbook/docs/doc_cls)`]`
 * [Natural Language Inference](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/pair-cls-train.ipynb) `[`[Ratsgo's NLPBOOK Pair Classification](https://ratsgo.github.io/nlpbook/docs/pair_cls)`]`
