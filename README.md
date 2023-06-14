@@ -279,11 +279,11 @@ Password or token: $USER    # your account ID on Neuron
 
 ## NLP fine-tunings on Jupyter
 Now, you are ready to run fine-tuning code examples on a jupyter notebook. Please refer to the [notebooks](https://github.com/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/tree/main/notebooks) directory for jupyter notebook source code. 
-* [Sentiment Analysis](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/doc-cls-train.ipynb)[Ratsgo's NLPBOOL Document Classification](https://ratsgo.github.io/nlpbook/docs/doc_cls)
-* [Natural Language Inference](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/pair-cls-train.ipynb) [Ratsgo's NLPBOOK Pair Classification](https://ratsgo.github.io/nlpbook/docs/pair_cls)
-* [Named Entiry Recognition](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/ner-train.ipynb) [Ratsgo's NLPBOOK Named Entiry Recognition(https://ratsgo.github.io/nlpbook/docs/ner)
-* [Question Answering](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/QA-train.ipynb) [Ratsgo's NLPBOOK Question Answering](https://ratsgo.github.io/nlpbook/docs/qa)
-* [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb) [Ratsgo's NLPBOOK Sentence Generation](https://ratsgo.github.io/nlpbook/docs/generation)
+* [Sentiment Analysis](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/doc-cls-train.ipynb)`[`[Ratsgo's NLPBOOL Document Classification](https://ratsgo.github.io/nlpbook/docs/doc_cls)`]`
+* [Natural Language Inference](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/pair-cls-train.ipynb) `[`[Ratsgo's NLPBOOK Pair Classification](https://ratsgo.github.io/nlpbook/docs/pair_cls)`]`
+* [Named Entiry Recognition](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/ner-train.ipynb) `[`[Ratsgo's NLPBOOK Named Entiry Recognition](https://ratsgo.github.io/nlpbook/docs/ner)`]`
+* [Question Answering](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/QA-train.ipynb) `[`[Ratsgo's NLPBOOK Question Answering](https://ratsgo.github.io/nlpbook/docs/qa)`]`
+* [Sentence Generation](https://nbviewer.org/github/hwang2006/NLP-practice-on-supercomputer-with-pytorch-lightning/blob/main/notebooks/snt-gen-train.ipynb) `[`[Ratsgo's NLPBOOK Sentence Generation](https://ratsgo.github.io/nlpbook/docs/generation)`]`
 
 ## Running distributed NLP fine-tuning tasks on SLURM
 Now, you are ready to run the NLP fine-tuning examples on multiple GPU nodes. You need to tweak the Ratsnlp package a bit in order to be able to conduct distributed fine-tunning practices on a SLURM cluster. Yon need to modify the "get_trainer()" method in the trainer.py to enable the execution of distributed training across multiple GPU nodes. That's it!!
