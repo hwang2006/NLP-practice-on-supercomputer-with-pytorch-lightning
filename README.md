@@ -10,6 +10,7 @@ Please note that all the code in this repository is sourced from the *Ratsgo's N
 I had to make slight modifications to the original Google Colab code to enable distributed training across multiple GPU nodes on a supercomputer.  
 
 **Contents**
+* [Motivation](#motivation)
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
 * [Installing Conda](#installing-conda)
 * [Installing Ratsnlp](#installing-ratsnlp)
@@ -18,6 +19,9 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Running distributed NLP fine-tuning tasks on SLURM](#running-distributed-nlp-fine-tuning-tasks-on-slurm)
 * [Running a Flask web server for exercising inference](#running-a-flask-web-server-for-exercising-inference-with-the-fine-tuned-models)
 * [Reference](#reference)
+
+## Motivation
+I have found Ratsgo's NLPBOOK blog is instrumental in understaning NLP fine-tuning tasks on top of Pytorch Lightning Framework.     
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
