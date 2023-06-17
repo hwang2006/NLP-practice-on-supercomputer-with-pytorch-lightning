@@ -182,14 +182,14 @@ In order to do so, you need to add the horovod-enabled virtual envrionment that 
 3. add the virtual environment as a jupyter kernel:
 ```
 (nlp) [glogin01]$ pip install ipykernel 
-(nlp) [glogin01]$ python -m ipykernel install --user --name lightning
+(nlp) [glogin01]$ python -m ipykernel install --user --name nlp
 ```
 4. check the list of kernels currently installed:
 ```
 (nlp) [glogin01]$ jupyter kernelspec list
 Available kernels:
 python3       /home01/$USER/.local/share/jupyter/kernels/python3
-horovod       /home01/$USER/.local/share/jupyter/kernels/lightning
+horovod       /home01/$USER/.local/share/jupyter/kernels/nlp
 ```
 5. launch a jupyter notebook server on a worker node 
 - to deactivate the virtual environment
