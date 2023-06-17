@@ -161,11 +161,7 @@ Receiving objects: 100% (928/928), 146.95 KiB | 0 bytes/s, done.
 4. check if the pytorch lightning packages were installed:
 ``` 
 (lightning) [glogin01]$ conda list | grep lightning
-# packages in environment at /scratch/$USER/miniconda3/envs/lightning:
-lightning                 2.0.2                    pypi_0    pypi
-lightning-cloud           0.5.36                   pypi_0    pypi
-lightning-utilities       0.8.0                    pypi_0    pypi
-pytorch-lightning         2.0.2                    pypi_0    pypi
+pytorch-lightning         1.6.1                    pypi_0    pypi
 ```
 
 ## Running Jupyter
