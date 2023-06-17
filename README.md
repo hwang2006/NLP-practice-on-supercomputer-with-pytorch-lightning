@@ -176,7 +176,7 @@ In order to do so, you need to add the horovod-enabled virtual envrionment that 
 ```
 2. install Jupyter on the virtual environment:
 ```
-(nlp) [glogin01]$ conda install jupyter
+(nlp) [glogin01]$ conda install jupyter chardet
 (nlp) [glogin01]$ pip install jupyter-tensorboard
 ```
 3. add the virtual environment as a jupyter kernel:
