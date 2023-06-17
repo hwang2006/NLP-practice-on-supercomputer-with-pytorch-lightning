@@ -233,7 +233,7 @@ module load gcc/10.2.0 cuda/11.4 cudampi/openmpi-4.1.1
 echo "execute jupyter"
 source ~/.bashrc
 conda activate nlp
-cd /scratch/$USER     # the root/work directory of the jupyter lab/notebook to be launched
+cd /scratch/$USER/nlp     # the root/work directory of the jupyter lab/notebook to be launched
 jupyter lab --ip=0.0.0.0 --port=${PORT_JU} --NotebookApp.token=${USER} #jupyter token: your user name
 echo "end of the job"
 ```
