@@ -172,21 +172,21 @@ pytorch-lightning         1.6.1                    pypi_0    pypi
 In order to do so, you need to add the horovod-enabled virtual envrionment that you have created as a python kernel.
 1. activate the horovod-enabled virtual environment:
 ```
-[glogin01]$ conda activate lightning
+[glogin01]$ conda activate nlp
 ```
 2. install Jupyter on the virtual environment:
 ```
-(lightning) [glogin01]$ conda install jupyter
-(lightning) [glogin01]$ pip install jupyter-tensorboard
+(nlp) [glogin01]$ conda install jupyter
+(nlp) [glogin01]$ pip install jupyter-tensorboard
 ```
 3. add the virtual environment as a jupyter kernel:
 ```
-(lightning) [glogin01]$ pip install ipykernel 
-(lightning) [glogin01]$ python -m ipykernel install --user --name lightning
+(nlp) [glogin01]$ pip install ipykernel 
+(nlp) [glogin01]$ python -m ipykernel install --user --name lightning
 ```
 4. check the list of kernels currently installed:
 ```
-(lightning) [glogin01]$ jupyter kernelspec list
+(nlp) [glogin01]$ jupyter kernelspec list
 Available kernels:
 python3       /home01/$USER/.local/share/jupyter/kernels/python3
 horovod       /home01/$USER/.local/share/jupyter/kernels/lightning
@@ -194,7 +194,7 @@ horovod       /home01/$USER/.local/share/jupyter/kernels/lightning
 5. launch a jupyter notebook server on a worker node 
 - to deactivate the virtual environment
 ```
-(horovod) [glogin01]$ conda deactivate
+(nlp) [glogin01]$ conda deactivate
 ```
 - to create a batch script for launching a jupyter notebook server: 
 ```
