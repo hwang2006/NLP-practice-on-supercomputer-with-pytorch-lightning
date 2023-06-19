@@ -3,11 +3,9 @@ Natural Language Processing (NLP) is a subfield of artificial intelligence (AI) 
 
 This repo is intended to share best practices for fine-tuning pretrained models (e.g., BERT and GPT-2) using multiple GPU nodes on a supercomputer managed by SLURM. It encompasses five fine-tuning tasks : (1) Document Classification (Sentiment Analysis), (2) Sentence Pair Classification (Natural Language Inference; NLI), (3) Sequence Labeling (Named Entity Recognition; NER), (4) Question Answering, and (5) Sentence Generation. The initial four fine tunings rely on a BERT pretrainded model, while the Sentence Generation example uses a GPT-2 pretrained model. 
 
-Please note that all the code in this repository is sourced from the *Ratsgo's NLPBOOK* blog created by Gichang Lee.   
+Please note that all the code in this repository is orginated from the *Ratsgo's NLPBOOK* blog created by Gichang Lee.   
 * You can access and run the original code on Google Colab through [Ratsgo's Tutorial Link](https://ratsgo.github.io/nlpbook/docs/tutorial_links) 
-* Detailed explanations of how the five fine-tuning examples work including data preprocessing for each task can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/)
-
-I had to make slight modifications to the original Google Colab code to enable distributed training across multiple GPU nodes on a supercomputer.  
+* Detailed explanations of how the five fine-tuning examples work including data preprocessing for each task can be found in [Ratsgo's NLPBOOK](https://ratsgo.github.io/nlpbook/) 
 
 **Contents**
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
@@ -18,6 +16,9 @@ I had to make slight modifications to the original Google Colab code to enable d
 * [Running distributed NLP fine-tuning tasks on SLURM](#running-distributed-nlp-fine-tuning-tasks-on-slurm)
 * [Running a Flask web server for exercising inference](#running-a-flask-web-server-for-exercising-inference-with-the-fine-tuned-models)
 * [Reference](#reference) 
+
+## Motivations
+NLPBOOK is designed to perform fine-tuning tasks on Google Colab, but I find it slow and somewhat inconvenient. Therefore, I decided to accelerate the training process by making the most use of a supercomputer. I had to make some modifications to the original code to enable the execution of fine-tuning tasks from pre-trained models such as BERT and GPT-2 on a KISTI GPU cluster with multiple GPU nodes.
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
