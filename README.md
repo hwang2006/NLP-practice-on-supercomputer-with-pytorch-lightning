@@ -19,7 +19,7 @@ Please note that all the code in this repository is orginated from the *Ratsgo's
 * [Reference](#reference) 
 
 ## Motivations
-NLPBOOK is designed for the NLP fine-tuning tasks on Google Colab, but I find it too slow and somewhat inconvenient, for example, with the need to mount Google Drive every time when launching it. Therefore, I decided to bring it to a supercompter to get the training practices done faster. I had to make some modifications to the original code to enable the execution of fine-tuning tasks from pre-trained models such as BERT and GPT-2 on a KISTI GPU cluster with multiple GPU nodes.
+NLPBOOK is designed for the NLP fine-tuning tasks on Google Colab, but I find it too slow and somewhat inconvenient, for example, with the need to mount Google Drive every time when starting it. Therefore, I decided to bring it to a supercompter to get the training practices done faster. I had to make some modifications to the original code to enable the execution of fine-tuning tasks from pre-trained models such as BERT and GPT-2 on a KISTI GPU cluster with multiple GPU nodes.
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
