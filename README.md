@@ -1,5 +1,5 @@
 # NLP-practices-on-supercomputer-with-pytorch-lightning
-Natural Language Processing (NLP) is a subfield of artificial intelligence (AI) focusing on the interaction between computers and human language. It involves the development of algorithms and models that enable computers to understand, interpret, and generate natural language in a way that is similar to how humans do. NLP encompasses a wide range of tasks including sentiment analysis, text classification, machine translation, chatbots and virtual assistants, question answering and name entity recognition. 
+Natural Language Processing (NLP) is a subfield of artificial intelligence (AI) focusing on the interaction between computers and human language. It involves the development of algorithms and models that enable computers to understand, interpret, and generate natural language in a way that is similar to how humans do. NLP covers a wide range of tasks including sentiment analysis, text classification, machine translation, chatbots and virtual assistants, question answering and name entity recognition. 
 
 This repo is intended to share best practices for fine-tuning pretrained models (e.g., BERT and GPT-2) using multiple GPU nodes on a supercomputer managed by SLURM. It encompasses five fine-tuning tasks : (1) Document Classification (Sentiment Analysis), (2) Sentence Pair Classification (Natural Language Inference; NLI), (3) Sequence Labeling (Named Entity Recognition; NER), (4) Question Answering, and (5) Sentence Generation. The initial four fine tunings rely on a BERT pretrainded model, while the Sentence Generation example uses a GPT-2 pretrained model. 
 
@@ -19,7 +19,7 @@ Please note that all the code in this repository is orginated from the *Ratsgo's
 * [Reference](#reference) 
 
 ## Motivations
-NLPBOOK is designed for the NLP fine-tuning tasks on Google Colab, but I find it too slow and somewhat inconvenient, for example, with the need to mount Google Drive every time. Therefore, I decided to bring it to a supercompter to get the training practices done faster. I had to make some modifications to the original code to enable the execution of fine-tuning tasks from pre-trained models such as BERT and GPT-2 on a KISTI GPU cluster with multiple GPU nodes.
+NLPBOOK is designed for the NLP fine-tuning tasks on Google Colab, but I find it too slow and somewhat inconvenient, for example, with the need to mount Google Drive every time when launching it. Therefore, I decided to bring it to a supercompter to get the training practices done faster. I had to make some modifications to the original code to enable the execution of fine-tuning tasks from pre-trained models such as BERT and GPT-2 on a KISTI GPU cluster with multiple GPU nodes.
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
