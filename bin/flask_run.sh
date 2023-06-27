@@ -37,7 +37,8 @@ conda activate nlp
 #conda activate tf-nlp
 #conda activate hvd
 cd /scratch/qualis/nlp  
-flask --app doc-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
+flask --app NLP-practices-on-supercomputer-with-pytorch-lightning/src/doc-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
+#flask --app doc-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
 #flask --app pair-cls-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
 #flask --app ner-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
 #flask --app QA-deploy.py run --host=0.0.0.0 --port=${PORT_JU} --debug
